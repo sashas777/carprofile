@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+  ~  @author     The S Group <support@sashas.org>
+  ~  @copyright  2024 Endeavour Inc. (https://www.sashas.org)
+  ~  @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
+        <attribute code="customer_car" type="Razoyo\CarProfile\Api\Data\CustomerCarInterface"/>
+    </extension_attributes>
+</config>

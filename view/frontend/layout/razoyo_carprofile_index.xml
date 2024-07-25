@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+  ~  @author     The S Group <support@sashas.org>
+  ~  @copyright  2024 Endeavour Inc. (https://www.sashas.org)
+  ~  @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+  -->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+        </referenceContainer>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">My Car</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

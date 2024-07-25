@@ -1,0 +1,36 @@
+{
+    "name": "thesgroup/module-razoyo-carprofile",
+    "description": "Ability to add a car to a customer account",
+    "homepage": "https://www.sashas.org/",
+    "type": "magento2-module",
+    "require": {
+        "php": "~8.2.0||~8.3.0",
+        "magento/framework": "103.0.*"
+    },
+    "authors": [
+        {
+            "name": "Alexander Lukyanov",
+            "email": "support@sashas.org"
+        }
+    ],
+    "license": [
+        "GPL-3.0-only"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Razoyo\\CarProfile\\": ""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true
+        }
+    }
+}

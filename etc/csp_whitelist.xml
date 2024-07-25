@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+  ~  @author     The S Group <support@sashas.org>
+  ~  @copyright  2024 Endeavour Inc. (https://www.sashas.org)
+  ~  @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+  -->
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="img-src">
+            <values>
+                <value id="rayozo" type="host">https://exam.razoyo.com/</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

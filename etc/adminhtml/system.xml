@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+  ~  @author     The S Group <support@sashas.org>
+  ~  @copyright  2024 Endeavour Inc. (https://www.sashas.org)
+  ~  @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="razoyo" translate="label" sortOrder="2000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Car Profile</label>
+            <tab>customer</tab>
+            <resource>Razoyo_CarProfile::config_view</resource>
+            <group id="car_profile" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Car Profile</label>
+                <field id="status" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Car Profile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_url" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API URL</label>
+                    <comment>The API Url for information about cars.</comment>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

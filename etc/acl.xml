@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--
+  ~  @author     The S Group <support@sashas.org>
+  ~  @copyright  2024 Endeavour Inc. (https://www.sashas.org)
+  ~  @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::system">
+                    <resource id="Razoyo_CarProfile::main" title="Car Profile" translate="title" sortOrder="1000">
+                        <resource id="Razoyo_CarProfile::config_config" title="Configuration" translate="title" sortOrder="100">
+                            <resource id="Razoyo_CarProfile::config_view" title="Car Profile Config View" translate="title" sortOrder="10"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
+
