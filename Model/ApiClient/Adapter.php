@@ -103,7 +103,7 @@ class Adapter
                 'response body: '.$responseJson
             );
             throw new LocalizedException(__(
-                'There is an error in cars api response. Please try again.',
+                'There is an error in cars api response. Please try again.'
             ));
         }
         // when there was an error with un-serialization
