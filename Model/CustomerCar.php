@@ -37,7 +37,7 @@ class CustomerCar extends AbstractModel implements CustomerCarInterface
      */
     public function getCustomerId(): ?int
     {
-        return $this->getData(static::CUSTOMER_ID);
+        return (int)$this->getData(static::CUSTOMER_ID);
     }
 
     /**
@@ -51,17 +51,33 @@ class CustomerCar extends AbstractModel implements CustomerCarInterface
     /**
      * {@inheritdoc}
      */
-    public function getId()
+    public function getEntityId()
     {
-        return $this->getData(static::ID);
+        return $this->getData(static::ENTITY_ID);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setId($id): CustomerCarInterface
+    public function setEntityId($id): CustomerCarInterface
     {
-        return $this->setData(static::ID, $id);
+        return $this->setData(static::ENTITY_ID, $id);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getExtId(): ?string
+    {
+        return $this->getData(static::EXT_ID);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setExtId(string $extId): CustomerCarInterface
+    {
+        return $this->setData(static::EXT_ID, $extId);
     }
 
     /**
@@ -83,7 +99,7 @@ class CustomerCar extends AbstractModel implements CustomerCarInterface
     /**
      * {@inheritdoc}
      */
-    public function getMake(): string
+    public function getMake(): ?string
     {
         return $this->getData(static::MAKE);
     }
@@ -99,7 +115,7 @@ class CustomerCar extends AbstractModel implements CustomerCarInterface
     /**
      * {@inheritdoc}
      */
-    public function getModel(): string
+    public function getModel(): ?string
     {
         return $this->getData(static::MODEL);
     }
@@ -163,7 +179,7 @@ class CustomerCar extends AbstractModel implements CustomerCarInterface
     /**
      * {@inheritdoc}
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->getData(static::IMAGE);
     }

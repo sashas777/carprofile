@@ -1,0 +1,21 @@
+<?php
+/*
+ *  @author     The S Group <support@sashas.org>
+ *  @copyright  2024 Endeavour Inc. (https://www.sashas.org)
+ *  @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+ */
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<div id="car-profile-container" data-bind="scope:'car-profile'" class="car-profile-container">
+    <!-- ko foreach: getRegion('messages') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!--/ko-->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#car-profile-container": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+    }
+}
+</script>

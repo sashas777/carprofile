@@ -16,8 +16,9 @@ interface CustomerCarInterface
     /**#@+
      * Constants defined for keys of array
      */
-    public const CUSTOMER_ID = 'customer_ID';
-    public const ID = 'id';
+    public const CUSTOMER_ID = 'customer_id';
+    public const ENTITY_ID = 'entity_id';
+    public const EXT_ID = 'ext_id';
     public const YEAR = 'year';
     public const MAKE = 'make';
     public const MODEL = 'model';
@@ -40,13 +41,24 @@ interface CustomerCarInterface
     /**
      * @return string
      */
-    public function getId();
+    public function getEntityId();
 
     /**
      * @param string $id
      * @return CustomerCarInterface
      */
-    public function setId($id): CustomerCarInterface;
+    public function setEntityId($id): CustomerCarInterface;
+
+    /**
+     * @return ?string
+     */
+    public function getExtId(): ?string;
+
+    /**
+     * @param string $extId
+     * @return CustomerCarInterface
+     */
+    public function setExtId(string $extId): CustomerCarInterface;
 
     /**
      * @return int
@@ -60,9 +72,9 @@ interface CustomerCarInterface
     public function setYear(int $year): CustomerCarInterface;
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function getMake(): string;
+    public function getMake(): ?string;
 
     /**
      * @param string $make
@@ -71,9 +83,9 @@ interface CustomerCarInterface
     public function setMake(string $make): CustomerCarInterface;
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function getModel(): string;
+    public function getModel(): ?string;
 
     /**
      * @param string $model
@@ -115,9 +127,9 @@ interface CustomerCarInterface
     public function setMpg(int $mpg): CustomerCarInterface;
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function getImage(): string;
+    public function getImage(): ?string;
 
     /**
      * @param string $image

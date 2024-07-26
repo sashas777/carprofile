@@ -32,4 +32,11 @@ interface CustomerCarRepositoryInterface
      * @return bool
      */
     public function delete(CustomerCarInterface $customerCar): bool;
+
+    /**
+     * @param int $customerId
+     * @param string $carId
+     * @return CustomerCarInterface
+     */
+    public function saveByCarId(int $customerId, string $carId): CustomerCarInterface;
 }

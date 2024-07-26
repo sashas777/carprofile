@@ -3,7 +3,13 @@
 ## Installation
 ## Remove the module
 
- 
+- Currency add
+- CSS
+- Responsive styles
+- composer.josn
+- README
+- Unit tests
+- Framework test
 
 ## Assumptions
 - Assumed one customer may have only one car.

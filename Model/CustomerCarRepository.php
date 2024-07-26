@@ -10,6 +10,7 @@ namespace Razoyo\CarProfile\Model;
 
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
+use Razoyo\CarProfile\Api\ApiCarsRepositoryInterface;
 use Razoyo\CarProfile\Api\CustomerCarRepositoryInterface;
 use Razoyo\CarProfile\Api\Data\CustomerCarInterfaceFactory;
 use Razoyo\CarProfile\Api\Data\CustomerCarInterface;
@@ -20,13 +21,16 @@ use Razoyo\CarProfile\Model\ResourceModel\CustomerCar as ResourceCustomerCar;
  */
 class CustomerCarRepository implements CustomerCarRepositoryInterface
 {
+
     /**
      * @param ResourceCustomerCar $resource
      * @param CustomerCarInterfaceFactory $carInterfaceFactory
+     * @param ApiCarsRepositoryInterface $apiCarsRepository
      */
     public function __construct(
         private readonly ResourceCustomerCar $resource,
-        private readonly CustomerCarInterfaceFactory $carInterfaceFactory
+        private readonly CustomerCarInterfaceFactory $carInterfaceFactory,
+        private readonly ApiCarsRepositoryInterface $apiCarsRepository
     ) { }
 
     /**
@@ -74,4 +78,19 @@ class CustomerCarRepository implements CustomerCarRepositoryInterface
         return true;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function saveByCarId(int $customerId, string $carId): CustomerCarInterface
+    {
+        /** @var CustomerCar $customerCar */
+        $customerCar = $this->get($customerId);
+
+        $apiCar = $this->apiCarsRepository->getCarById($carId);
+        $apiCar->setEntityId($customerCar->getEntityId())
+            ->setCustomerId($customerId)
+            ->setExtId($carId);
+
+        return $this->save($apiCar);
+    }
 }

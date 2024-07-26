@@ -20,6 +20,6 @@ class CustomerCar extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('customer_car', 'id');
+        $this->_init('customer_car', 'entity_id');
     }
 }
