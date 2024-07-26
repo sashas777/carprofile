@@ -1,25 +1,49 @@
-
 ## Overview
+Establishes a connection between Adobe Commerce and a Cars API service, allowing customers to add and manage car details within their customer profiles. 
+
 ## Installation
-## Remove the module
 
-- Currency add
-- CSS
-- Responsive styles
-- composer.josn
-- README
-- Unit tests
-- Framework test
+Run the following command at Magento 2 root folder:
 
-## Assumptions
-- Assumed one customer may have only one car.
-- Assumed GQL interfaces not required
-- Assumed webApi not required
-- Assumed admin management not required
-- Assumed car can be changed only from frontend
-- Assumed no ability to remove a car
-- Assumed API responses within 30 seconds
-- Assumed all cars from CarList API exist in CarDetail API
-- Assumed no need for Sandbox/Production API
+```
+composer require thesgroup/module-razoyo-carprofile
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy
+```
+
+## Uninstallation
+```
+composer remove thesgroup/module-razoyo-carprofile
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy
+```
+
+## Configuration
+The module can be configured at the Stores -> Configuration -> Customers -> Car Profile
+
+## Limitations
+- An API response should be within 30 seconds.
+- One customer may have only one car.
+
+## Possible Improvements
+- GQL Interfaces for a headless theme.
+- Admin management for customer's extension attribute.
+- Ability to remove a car, currently possible to remove it.
+- Ability to save more than one car. 
+- Support for switch between sandbox/production environment for API with a dropdown option
+- Implement cache for API requests responses 
+- Add Unit tests
+
+## Showcase
+
+![](https://github.com/sashas777/assets/raw/master/carprofile_1.png)
+![](https://github.com/sashas777/assets/raw/master/carprofile_2.png)
+![](https://github.com/sashas777/assets/raw/master/carprofile_3.png)
+![](https://github.com/sashas777/assets/raw/master/carprofile_4.png)
+![](https://github.com/sashas777/assets/raw/master/carprofile_5.png)
+
+
 
  

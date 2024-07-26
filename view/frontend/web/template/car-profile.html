@@ -8,11 +8,11 @@
         <div class="message info empty" data-bind="visible: (myCar().customer_id == 0)">
             <span data-bind="i18n: 'You don\'t have a car.'"></span>
         </div>
-        <div class="car-selector-container" style="display: flex;" data-bind="visible: isCarSelectorVisible()">
+        <div class="car-selector-container" data-bind="visible: isCarSelectorVisible()">
             <div class="selector-container">
                 <div class="field field-select-make">
                     <h2 data-bind="i18n: 'Select a Make'"></h2>
-                    <div class="control" style="padding-bottom: 20px;" data-bind="if: (makeOptions().length > 0)">
+                    <div class="control"  data-bind="if: (makeOptions().length > 0)">
                         <select class="select" name="car_make" data-bind="
         options: makeOptions(),
         optionsCaption: 'Select a make...',
@@ -22,7 +22,7 @@
                 </div>
                 <div class="field field-select-car" data-bind="if: (carOptions().length > 0)">
                     <h2 data-bind="i18n: 'Select a Model'"></h2>
-                    <div class="control" style="padding-bottom: 20px;">
+                    <div class="control">
                         <select class="select" name="car_model" data-bind="
         options: carOptions(),
         optionsCaption: 'Select a car...',
@@ -37,14 +37,14 @@
             </div>
         </div>
         <div class="my-car-container block-content" data-bind="if: (myCar().customer_id > 0)">
-            <div class="car-title" style="display: flex;">
+            <div class="car-title">
                 <h2 data-bind="text: getCarTitle()"></h2>
             </div>
-            <div class="car-specs-container" style="display: flex; justify-content: flex-start;">
-                <div class="car-image" style="flex-grow: 1; max-width: 250px;">
+            <div class="car-specs-container">
+                <div class="car-image">
                     <img data-bind="attr: {'src': myCar().image, 'alt': getCarTitle(), 'title': getCarTitle() }" loading="lazy"/>
                 </div>
-                <div class="car-details" style="flex-grow: 2; padding-left: 20px;">
+                <div class="car-details">
                     <div class="table-wrapper car-specs">
                         <table class="data table table-cars-specs" id="car-specs-table">
                             <tbody>
